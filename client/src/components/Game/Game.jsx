@@ -8,7 +8,7 @@ import {
     applyMove,
     switchPlayer,
     createInitialGameState,
-} from "../../utils/gameLogic";
+} from "../../../utils/gameLogic";
 
 export default function Game() {
     const [gameState, setGameState] = useState(createInitialGameState());
