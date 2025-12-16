@@ -35,6 +35,16 @@ export default function PlayerSetup({ onPlayerSet }) {
 
         setLoading(true);
 
+        if (existingPlayer != null) {
+            localStorage.setItem("playerId", existingPlayer.id);
+            localStorage.setItem("playerName", existingPlayer.name);
+
+            onPlayerSet(existingPlayer);
+            setLoading(false);
+
+            return;
+        }
+
         try {
             const data = await (
                 await fetch("http://localhost:3000/api/players", {
