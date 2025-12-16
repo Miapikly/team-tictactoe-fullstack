@@ -2,4 +2,4 @@
 
 ## Team members
 - **Backend Developer:** [Logan]
-- **Frontend Developer:** []
+- **Frontend Developer:** [Nicolas](https://github.com/Nicolas-Okuly)
