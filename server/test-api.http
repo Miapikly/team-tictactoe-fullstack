@@ -23,4 +23,104 @@ Content-Type: application/json
     "name": "Jessi"
 }
 
-// Start with create Bob
+### Create Player - Bob
+POST http://localhost:3000/api/players
+Content-Type: application/json
+
+{
+    "name": "Bob"
+}
+
+### Get All Players
+GET http://localhost:3000/api/players
+
+### Get Player by ID (replace with actual ID form create response)
+GET http://localhost:3000/api/players/PLAYER-ID-HERE
+
+### Get Player by Name
+GET http://localhost:3000/api/players/name/MasterRyan
+
+### ==========================================
+### STATS TRACKING
+### ==========================================
+
+### MasterRyan Wins (replace with MasterRyan's ID)
+POST http://localhost:3000/api/players/MASTERRYAN-ID-HERE/stats
+Content-Type: application/json
+
+{
+    "result": "win"
+}
+
+### MasterRyan Wins Again
+POST http://localhost:3000/api/players/MASTERRYAN-ID-HERE/stats
+Content-Type: application/json
+
+{
+    "result": "win"
+}
+
+### MasterRyan Loses
+POST http://localhost:3000/api/players/MASTERRYAN-ID-HERE/stats
+Content-Type: application/json
+
+{
+    "result": "loss"
+}
+
+### Jessi Wins
+POST http://localhost:3000/api/players/JESSI-ID-HERE/stats
+Content-Type: application/json
+
+{
+    "result": "win"
+}
+
+### Jessi Ties
+POST http://localhost:3000/api/players/JESSI-ID-HERE/stats
+Content-Type: applicaiton/json
+
+{
+    "result": "tie"
+}
+
+### ==========================================
+### LEADERBOARD
+### ==========================================
+
+### Get Top 10 Leaderboard
+GET http://localhost:3000/api/leaderboard
+
+### Get Top 5 Leaderboard
+GET http://locahost:3000/api/leaderboard?limit=5
+
+### ==========================================
+### ERROR TESTING
+### ==========================================
+
+### Try to Create Player with No Name (should fail)
+POST http://localhost:3000/api/players
+Content-Type: application/json
+
+{
+
+}
+
+### Try to Create Duplicate Player (should fail)
+POST http://localhost:3000/api/players
+Content-Type: application/json
+
+{
+    "name": "MasterRyan"
+}
+
+### Try Invalid Stats Result (should fail)
+POST http://localhost:3000/api/players/PLAYER-ID-HERE/stats
+Content-Type: application/json
+
+{
+    "result": "invalid"
+}
+
+### Try to Get Non-existent Player (should fail)
+GET http://localhost:3000/api/players/fake-id-12345
