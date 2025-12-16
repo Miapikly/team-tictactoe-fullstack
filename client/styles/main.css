@@ -69,10 +69,10 @@ button:focus-visible {
 
 .player-setup {
     min-height: 100vh;
+    min-width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
 }
 
 .player-setup-card {
@@ -115,7 +115,7 @@ button:focus-visible {
 
 .form-group {
     margin-bottom: 1.5rem;
-    text-align: left;
+    text-align: center;
 }
 
 .form-group label {
@@ -127,11 +127,13 @@ button:focus-visible {
 }
 
 .player-input {
-    width: 100%;
-    padding: 0.875rem 1rem;
+    width: 85%;
+    padding: 0.875rem 2rem;
     font-size: 1rem;
-    border: 2px solid #e0e0e0;
+    font-weight: 600;
+    border: none;
     border-radius: 0.5rem;
+    cursor: pointer;
     transition: all 0.2s ease;
     font-family: inherit;
 }
@@ -267,4 +269,25 @@ button:focus-visible {
     .btn {
         padding: 0.75rem 1.5rem;
     }
+}
+
+.existing-player-info {
+    background: #e3f2fd;
+    border: 2px solid #2196f3;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .existing-player-info .stats {
+    font-weight: 600;
+    color: #1976d2;
+    margin: 0.5rem 0;
+  }
+  
+  .existing-player-info .info-text {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0.5rem 0 0 0;
 }
