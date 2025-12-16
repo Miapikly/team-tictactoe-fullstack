@@ -2,4 +2,7 @@
 
 ## Team members
 - **Backend Developer:** [Logan]
-- **Frontend Developer:** []
+- **Frontend Developer:** [Nicolas]
+- **Git Manager/PM:** [Jessica]
+
+## Project Structure
