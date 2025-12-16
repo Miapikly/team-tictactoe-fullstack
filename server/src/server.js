@@ -153,7 +153,7 @@ app.post('/api/players/:id/stats', (req, res) => {
             });
         }
 
-        const player = udpatePlayerStats(req.params.id, result);
+        const player = updatePlayerStats(req.params.id, result);
 
         if (player.error) {
             return res.status(player.status).json({
