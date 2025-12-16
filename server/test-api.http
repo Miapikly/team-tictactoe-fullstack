@@ -45,7 +45,7 @@ GET http://localhost:3000/api/players/name/MasterRyan
 ### ==========================================
 
 ### MasterRyan Wins (replace with MasterRyan's ID)
-POST http://localhost:3000/api/players/MASTERRYAN-ID-HERE/stats
+POST http://localhost:3000/api/players/d52afb68-c9ba-4fb3-9f25-b34244df8ed8/stats
 Content-Type: application/json
 
 {
@@ -53,7 +53,7 @@ Content-Type: application/json
 }
 
 ### MasterRyan Wins Again
-POST http://localhost:3000/api/players/MASTERRYAN-ID-HERE/stats
+POST http://localhost:3000/api/players/d52afb68-c9ba-4fb3-9f25-b34244df8ed8/stats
 Content-Type: application/json
 
 {
@@ -61,7 +61,7 @@ Content-Type: application/json
 }
 
 ### MasterRyan Loses
-POST http://localhost:3000/api/players/MASTERRYAN-ID-HERE/stats
+POST http://localhost:3000/api/players/d52afb68-c9ba-4fb3-9f25-b34244df8ed8/stats
 Content-Type: application/json
 
 {
@@ -69,7 +69,7 @@ Content-Type: application/json
 }
 
 ### Jessi Wins
-POST http://localhost:3000/api/players/JESSI-ID-HERE/stats
+POST http://localhost:3000/api/players/4dbda3a6-c803-495a-bfc8-cc1c97ce4eef/stats
 Content-Type: application/json
 
 {
@@ -77,7 +77,7 @@ Content-Type: application/json
 }
 
 ### Jessi Ties
-POST http://localhost:3000/api/players/JESSI-ID-HERE/stats
+POST http://localhost:3000/api/players/4dbda3a6-c803-495a-bfc8-cc1c97ce4eef/stats
 Content-Type: applicaiton/json
 
 {
