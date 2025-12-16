@@ -180,3 +180,89 @@ app.post('/api/players/:id/stats', (req, res) => {
  * GET /api/leaderboard
  * Get top players by wins
  */
+
+app.get('/api/leaderboard', (req, res) => {
+    try {
+        const limit = parseInt(req.query.limit) || 10;
+        const leaderboard = getLeaderboard(limit);
+
+        res.json({
+            success: true,
+            leaderboard,
+            count: leaderboard.length
+        });
+    } catch (error) {
+        conosle.error("Error getting leaderboard:", error);
+        res.status(500).json({
+            success: false,
+            error: "Failed to get leaderboard"
+        });
+    }
+});
+
+/**
+ * GET /api/players/name/:name
+ * Get player by name
+ */
+
+app.get('/api/players/name/:name', (req, res) => {
+    try {
+        const player = getPlayerByName(req.params.name);
+
+        if (player.error) {
+            return res.status(player.status).json({
+                success: false,
+                error: player.error
+            });
+        }
+
+        res.json({
+            success: true,
+            player
+        });
+    } catch (error) {
+        console.error("Error getting player by name:", error);
+        res.status(500).json({
+            success: false,
+            error: "Failed to get player"
+        });
+    }
+});
+
+// ==========================================
+// ERROR HANDLERS
+// ==========================================
+
+// 404 handler
+app.use((req, res) => {
+    res.status(404).json({
+        success: false,
+        error: "Route not found"
+    });
+});
+
+// Error handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({
+        success: false,
+        error: "Internal server error",
+        message: NODE_ENV === 'development' ? err.message : undefined
+    });
+});
+
+// ==========================================
+// START SERVER
+// ==========================================
+
+app.listen(PORT, () => {
+    console.log(`\n Server running on http://localhost:${PORT}`);
+    console.log(`CORS enabled for http://localhost:5173`);
+    console.log(`\nAPI Endpoints:`);
+    console.log(`   POST   /api/players`);
+    console.log(`   GET   /api/players`);
+    console.log(`   GET   /api/players/:id`);
+    console.log(`   GET   /api/players/name/:name`);
+    console.log(`   POST   /api/players/:id/stats`);
+    console.log(`   GET   /api/leaderboard\n`);
+});

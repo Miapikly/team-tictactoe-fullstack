@@ -1,0 +1,26 @@
+### ==========================================
+### PLAYER CREATION & RETRIEVAL
+### ==========================================
+
+### Health Check
+GET http://localhost:3000/
+
+### Create Player - Ryan
+# @name createMasterRyan
+POST http://localhost:3000/api/players
+Content-Type: application/json
+
+{
+    "name": "MasterRyan"
+}
+
+### Create Player - Jessi
+# @name createJessi
+POST http://localhost:3000/api/players
+Content-Type: application/json
+
+{
+    "name": "Jessi"
+}
+
+// Start with create Bob
