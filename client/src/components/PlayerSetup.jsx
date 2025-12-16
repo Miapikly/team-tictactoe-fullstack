@@ -4,6 +4,24 @@ export default function PlayerSetup({ onPlayerSet }) {
     const [name, setName] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+    const [existingPlayer, setExistingPlayer] = useState(null);
+
+    const checkExistingPlayer = async (name) => {
+        try {
+            const response = await fetch(
+                `http://localhost:3000/api/players/name/${name}`
+            );
+            const data = await response.json();
+
+            if (data.success) {
+                setExistingPlayer(data.player);
+            } else {
+                setExistingPlayer(null);
+            }
+        } catch (err) {
+            setExistingPlayer(null);
+        }
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -48,6 +66,7 @@ export default function PlayerSetup({ onPlayerSet }) {
         }
     };
 
+
     return (
         <div className="player-setup">
             <div className="player-setup-card">
@@ -64,11 +83,29 @@ export default function PlayerSetup({ onPlayerSet }) {
                             type="text"
                             placeholder="Enter your name..."
                             value={name}
-                            onChange={(e) => setName(e.target.value)}
+                            onChange={(e) => {
+                                setName(e.target.value);
+                                if (e.target.value.trim().length > 2)
+                                    checkExistingPlayer(e.target.value.trim());
+                            }}
                             disabled={loading}
                             className="player-input"
                             autoFocus
                         />
+
+                        {existingPlayer && (
+                            <div className="existing-player-info">
+                                <p>Welcome back {existingPlayer.name}!</p>
+                                <p className="stats">
+                                    Wins: {existingPlayer.wins} | Losses:{" "}
+                                    {existingPlayer.losses} | Ties:{" "}
+                                    {existingPlayer.ties}
+                                </p>
+                                <p className="info-text">
+                                    Click Start Game to continue
+                                </p>
+                            </div>
+                        )}
                     </div>
 
                     <button
