@@ -1,32 +1,25 @@
 {
-    "name": "tictactoe-app",
-    "private": true,
-    "version": "0.0.0",
-    "type": "module",
-    "scripts": {
-      "dev": "vite",
-      "build": "vite build",
-      "lint": "eslint .",
-      "preview": "vite preview"
-    },
-    "dependencies": {
-      "react": "^19.1.1",
-      "react-dom": "^19.1.1",
-      "react-router-dom": "^7.9.5"
-    },
-    "devDependencies": {
-      "@eslint/js": "^9.36.0",
-      "@types/react": "^19.1.16",
-      "@types/react-dom": "^19.1.9",
-      "@vitejs/plugin-react": "^5.0.4",
-      "babel-plugin-react-compiler": "^19.1.0-rc.3",
-      "eslint": "^9.36.0",
-      "eslint-plugin-react-hooks": "^5.2.0",
-      "eslint-plugin-react-refresh": "^0.4.22",
-      "globals": "^16.4.0",
-      "vite": "npm:rolldown-vite@7.1.14"
-    },
-    "overrides": {
-      "vite": "npm:rolldown-vite@7.1.14"
-    }
+  "name": "tictactoe-server",
+  "version": "1.0.0",
+  "description": "Tic-Tac-Toe game with SQLite",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "tictactoe",
+    "express",
+    "sqlite"
+  ],
+  "author": "West-MEC",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^13.0.0"
   }
+}
