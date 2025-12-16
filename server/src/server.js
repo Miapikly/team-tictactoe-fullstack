@@ -1,4 +1,12 @@
 // server/src/server.js
+import cors from "cors";
+
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
