@@ -85,7 +85,7 @@ export function updatePlayerStats(playerId, result) {
     try {
         // Validate result
         if (!['win', 'loss', 'tie'].includes(result)) {
-            return { erro: 'Incalid result. Must be win, loss, or tie', status: 400 };
+            return { error: 'Invalid result. Must be win, loss, or tie', status: 400 };
         }
 
         // Determine which column to increment
@@ -100,7 +100,7 @@ export function updatePlayerStats(playerId, result) {
         // Update the stat and total_games
         db.prepare(`
             UPDATE players
-            SET ${updatColumn} = ${updateColumn} + 1,
+            SET ${updateColumn} = ${updateColumn} + 1,
                 total_games = total_games + 1
             WHERE id = ?
         `).run(playerId);
@@ -117,7 +117,7 @@ export function updatePlayerStats(playerId, result) {
 
 /**
  * Get leaderboard (Top players by wins)
- * @param {number} limit - How many players to return (defualt 10)
+ * @param {number} limit - How many players to return (default 10)
  */
 
 export function getLeaderboard(limit = 10) {
