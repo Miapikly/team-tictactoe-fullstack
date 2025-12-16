@@ -95,7 +95,7 @@ export function updatePlayerStats(playerId, result) {
         } else if (result === 'loss') {
             updateColumn = 'losses';
         } else {
-            updateColumn = 'tie';
+            updateColumn = 'ties';
         }
         // Update the stat and total_games
         db.prepare(`
