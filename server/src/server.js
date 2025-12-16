@@ -11,14 +11,14 @@ import {
     updatePlayerStats, // New
     getLeaderboard,    // New
     getPlayerByName    // New
-} from './services/playerService.js';
+} from './config/services/playerService.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
 // Middleware
-app.use(core({
+app.use(cors({
     origin: NODE_ENV === 'production'
         ? process.env.CLIENT_URL
         : 'http://localhost:5173',
@@ -90,13 +90,13 @@ app.post('/api/players', (req, res) => {
  * Get player by ID
  */
 
-app.get("/api/players/:id", (req, res) => {
+app.get("/api/players", (req, res) => {
     try {
         const players = getAllPlayers();
         res.json({
             success: true,
             players,
-            cound: players.length
+            count: players.length
         });
     } catch (error) {
         console.error(
@@ -153,7 +153,7 @@ app.post('/api/players/:id/stats', (req, res) => {
             });
         }
 
-        const player = udpatePlayerStats(req.params.id, result);
+        const player = updatePlayerStats(req.params.id, result);
 
         if (player.error) {
             return res.status(player.status).json({

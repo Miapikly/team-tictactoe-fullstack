@@ -1,6 +1,6 @@
 // server/src/services/playerSercive.js
 import { v4 as uuidv4 } from 'uuid';
-import db from '../config/database.js';
+import db from '../database.js';
 
 // Create new player with initial stats at 0
 export function createPlayer(name) {
