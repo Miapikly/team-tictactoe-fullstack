@@ -95,7 +95,7 @@ export default function PlayerSetup({ onPlayerSet }) {
 
                 <form onSubmit={handleSubmit} className="player-form">
                     <div className="form-group">
-                        <label htmlFor="playerName">Player Name</label>
+                        <label htmlFor="playerName">Player Name: </label>
                         <input
                             id="playerName"
                             type="text"
