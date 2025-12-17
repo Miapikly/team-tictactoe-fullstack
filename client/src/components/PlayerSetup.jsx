@@ -23,6 +23,14 @@ export default function PlayerSetup({ onPlayerSet }) {
         }
     };
 
+    const existingName = localStorage.getItem("playerName");
+    if (existingName) {
+        console.log(existingName);
+        checkExistingPlayer(existingName);
+        onPlayerSet(existingPlayer);
+        return;
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 

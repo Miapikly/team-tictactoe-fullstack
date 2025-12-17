@@ -12,50 +12,50 @@
 - [x] Auto-focus on input field
 
 ## Feature 2: API Integration
-- [] Successfully calls backend API
-- [] Sends correct JSON format
-- [] Handles 201 success response
-- [] Handles 400 error response (duplicate name)
-- [] Handles network errors gracefully
+- [x] Successfully calls backend API
+- [x] Sends correct JSON format
+- [x] Handles 201 success response
+- [x] Handles 400 error response (duplicate name)
+- [x] Handles network errors gracefully
 - [x] Shows appropriate error messages
 
 ## Feature 3: Data Persistence
-- [] Saves player ID to localStorage
-- [] Saves player name to localStorage
-- [] Loads from localStorage on page refresh
-- [] Skips setup if player exists
-- [] Clears localStorage on logout
+- [x] Saves player ID to localStorage
+- [x] Saves player name to localStorage
+- [x] Loads from localStorage on page refresh
+- [x] Skips setup if player exists
+- [x] Clears localStorage on logout
 
 ## Feature 4: User Flow
-- [] Transitions from setup to game
-- [] Displays player name in game
-- [] Logout returns to setup
-- [] Game board resets on logout
+- [x] Transitions from setup to game
+- [x] Displays player name in game
+- [x] Logout returns to setup
+- [x] Game board resets on logout
 
 ## Feature 5: Error Handling
 - [x] Shows error for empty name
-- [] Shows error for duplicate name
+- [x] Shows error for duplicate name
 - [x] Shows error for server connection failure
-- [] Error messages are user-friendly
-- [] Can recover from errors
+- [x] Error messages are user-friendly
+- [x] Can recover from errors
 
 ## Feature 6: UI/UX
 - [] Responsive on mobile
 - [x] Accessible (labels, focus states)
-- [] Loading states clear
+- [x] Loading states clear
 - [x] Buttons disable appropriately
-- [] Smooth transitions
+- [x] Smooth transitions
 
 ## Browser Compatibility
-- [] Chrome/Edge
-- [] Firefox
+- [x] Chrome/Edge
+- [x] Firefox
 - [ ] Safari (not tested)
 
 ## Known Issues
 - None
 
 ## Ready for Integration
-- [] Component complete
-- [] Styles polished
-- [] All tests passing
-- [] Ready to share with team
+- [x] Component complete
+- [x] Styles polished
+- [x] All tests passing
+- [x] Ready to share with team

@@ -43,6 +43,11 @@ export default function Game() {
         hasUpdatedStatsRef.current = false;
     };
 
+    const logout = () => {
+        localStorage.clear();
+        window.location = window.location;
+    }
+
     useEffect(() => {
         if (!gameOver || !player || hasUpdatedStatsRef.current) return;
 
@@ -103,6 +108,9 @@ export default function Game() {
                 />
                 <button className="reset-button" onClick={handleReset}>
                     New Game
+                </button>
+                <button className="reset-button" onClick={logout}>
+                    Logout
                 </button>
             </div>
         </>
